@@ -2,6 +2,8 @@
 
 *(Precision-Tightened Concise Form)*
 
+This whitepaper presents a foundational conceptual framework. Formalization, empirical validation, and implementation details are intentionally deferred.
+
 ---
 
 ## 1. The Problem
