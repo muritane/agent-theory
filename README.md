@@ -140,7 +140,7 @@ Triggered when observed errors cannot be decorrelated or reduced by parameter ad
 * Reintroduce previously discarded distinctions.
 * Update representations, constraints, and models.
 
-Redesign is itself costly, disruptive, and lossy. It cannot fully recover discarded distinctions, only reconstitute approximations under new abstractions.
+Redesign is itself costly, disruptive, and lossy. It cannot be assumed to recover discarded distinctions; at best it reconstitutes approximations under new abstractions.
 
 ---
 
