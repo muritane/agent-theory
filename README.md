@@ -1,6 +1,6 @@
 # A Core Theory of Action for Bounded Agents
 
-*(Precision-Tightened Concise Form — Whitelist-Integrated Revision)*
+*(Exact-Authorization Revision — Executable Boundary Form)*
 
 ---
 
@@ -13,11 +13,11 @@ Bounded agents must act in environments that are:
 * costly or unsafe to explore,
 * and sometimes adversarial.
 
-Repeated trial-and-error is often infeasible because errors can be irreversible, compounding, or fatal **along the agent’s local trajectory**, even when predictable in hindsight. As a result, failures recur across biological, artificial, and institutional systems despite accumulated experience.
+Errors cannot always be explored, undone, or amortized. Many failures are irreversible **along the agent’s local trajectory**, even when predictable in hindsight. As a result, failures recur across biological, artificial, and institutional systems despite accumulated experience.
 
 **The central question is therefore:**
 
-> How can a bounded agent act reliably over time without repeatedly paying for the same mistakes, when mistakes cannot always be safely explored, undone, or delegated?
+> How can a bounded agent act reliably over time when mistakes cannot be safely explored, reversed, or delegated—and when coordination and scale require exact, repeatable execution?
 
 ---
 
@@ -26,62 +26,102 @@ Repeated trial-and-error is often infeasible because errors can be irreversible,
 **Action entails irreversible information loss along the agent’s local trajectory.**
 
 Any pipeline from
-*world → perception → representation → model → action*
-necessarily maps many possible world states to fewer internal distinctions and ultimately to a single act. This mapping is many-to-one and therefore non-invertible **for the acting agent at the time of action**.
+*world → perception → representation → model → authorization → action*
+maps many possible world states to fewer internal distinctions and ultimately to a single executed transition.
 
-This irreversibility is:
+This mapping is:
 
-* structural rather than merely practical,
-* upstream of optimization,
-* unrecoverable without explicit redesign of representations and constraints.
+* many-to-one,
+* locally non-invertible for the acting agent,
+* and irreversible at the time of execution.
 
 Action does not merely select outcomes; it **collapses future option space** by committing the agent to one branch of reality while foreclosing others.
 
+Exact execution does not remove this loss—it **stabilizes it**.
+
 ---
 
-## 3. Reframing the Design Problem
+## 3. Exactness, Scale, and the Real Design Problem
 
-Given unavoidable local irreversibility, the primary design problem is not action selection per se, but:
+Large-scale agents only function because some layers are **exactly specified and mechanically executable**:
 
-> **Which distinctions, actions, and commitments are permitted at the agent boundary while preserving long-term viability?**
+* machine instructions resolve to specific registers and bit patterns,
+* genetic replication operates on exact nucleotide sequences,
+* laws, protocols, and procedures are written and publicly accessible.
 
-*Viability* refers strictly to maintaining the minimal preconditions for continued action, learning, coordination, and redesign **at the agent’s boundary and timescale**.
+Without exact templates, replication, coordination, and enforcement fail.
+
+However:
+
+> **Exact specification of symbols is not equivalent to complete specification of admissible state transitions.**
+
+Exactness enables scale, but it does not guarantee safety, viability, or boundary completeness.
+
+The true design problem is therefore not precision, but **authorization**.
+
+---
+
+## 4. Reframing the Design Problem
+
+Given unavoidable local irreversibility, the primary design problem is not action selection or optimization per se, but:
+
+> **Which distinctions, transitions, and commitments are explicitly authorized at the agent boundary—and under what conditions they may be revised.**
+
+*Viability* refers strictly to maintaining the minimal preconditions for:
+
+* continued action,
+* learning and coordination,
+* and redesign authority
+  **at the agent’s boundary and timescale**.
 
 Intelligence is therefore reframed as a problem of:
 
-* representation design,
-* constraint design,
-* and boundary control,
+* executable representation design,
+* explicit boundary authorization,
+* and preserved redesign authority,
 
-with optimization operating strictly *inside* already-permitted regions of action.
+with optimization operating strictly *inside* authorized regions.
 
 ---
 
-## 4. Central Hypothesis (Constraint-as-Whitelist)
+## 5. Central Hypothesis (Constraint-as-Whitelist)
 
-**Constraints function as explicit whitelists over admissible actions, commitments, and state transitions.**
+**Constraints function as explicit, exact whitelists over admissible actions, commitments, and state transitions.**
 
 More precisely:
 
-> A constraint commits the agent to treating all non-whitelisted distinctions, actions, or transitions as inadmissible by default, while collapsing permitted states into equivalence classes for efficient control.
+> A whitelist is an executable authorization that treats all non-specified transitions as inadmissible by default, while collapsing permitted states into equivalence classes for efficient control.
 
-Constraint design is thus the **deliberate authorization of a limited action space**, not the reactive prohibition of known failures.
+Whitelist design is thus:
 
-This implies:
+* proactive rather than reactive,
+* authorization rather than prohibition,
+* structural rather than behavioral.
 
-* higher upfront modeling and boundary design cost,
-* fewer downstream decisions,
-* reduced variance and surprise,
-* bounded regret within assumed invariants,
-* brittleness if the whitelist is not explicitly redesigned under drift.
-
-Blacklisting (enumerating forbidden actions) is insufficient under bounded knowledge; **whitelisting is the only scalable boundary strategy** for agents operating under irreversible action.
+Blacklisting (enumerating forbidden actions) does not scale under bounded knowledge.
+**Whitelisting is the only scalable boundary strategy for agents whose actions are irreversible and whose coordination requires exact execution.**
 
 ---
 
-## 5. Safe Information Loss and Safe Action Authorization
+## 6. Exact Authorization vs. Implicit Permission
 
-Information destruction and action authorization are provisionally safe when discarded distinctions or disallowed actions:
+Exact systems fail not because they are imprecise, but because:
+
+* authorization is implicit rather than explicit,
+* scope boundaries are assumed rather than claimed,
+* interfaces are treated as neutral plumbing,
+* or redesign authority is fragmented or undefined.
+
+Adversarial success almost never comes from violating explicit rules.
+It comes from **entering regions where authorization was never specified**, monitored, or revisable.
+
+Any boundary region that cannot trigger redesign is already outside the agent’s sovereignty.
+
+---
+
+## 7. Safe Information Loss and Safe Authorization
+
+Information destruction and action authorization are provisionally safe when discarded distinctions or disallowed transitions:
 
 * do not participate in causal pathways critical to viability,
 * do not silently consume future agency, resources, or identity,
@@ -93,43 +133,36 @@ Safety is:
 * probabilistic,
 * time-bounded.
 
-No agent can certify safety *ex ante*. It can only define **permitted regions** and monitor for violations that trigger redesign.
-
-Unsafe compression or authorization arises when:
-
-* commitments are made without explicit consent,
-* scope is unbounded or ambiguous,
-* exit or redesign authority is suppressed,
-* or irreversible effects are imposed asymmetrically.
+No agent can certify safety *ex ante*. It can only define **explicitly authorized regions**, enforce them mechanically, and monitor for violations that trigger redesign.
 
 ---
 
-## 6. Phase Structure of Whitelist-Controlled Agents
+## 8. Phase Structure of Whitelist-Controlled Agents
 
 ### Phase 1: Exploration (Whitelist Construction)
 
 * Preserve degrees of freedom.
-* Restrict action to **safe exploration regions**.
+* Restrict action to explicitly safe exploration regions.
 * Delay irreversible commitments.
 * Discover causal structure.
 
-Exploration occurs **inside externally or internally enforced whitelists**, not in unconstrained space.
+Exploration occurs **inside provisional whitelists**, not in unconstrained space.
 
 ---
 
 ### Phase 2: Compression (Whitelist Fixation)
 
 * Identify stable causal invariants.
-* Explicitly authorize limited actions and commitments.
-* Encode constraints as inspectable boundaries.
+* Encode exact, executable authorization rules.
+* Collapse distinctions into admissible equivalence classes.
 
-Compression defines what the agent is **allowed to do**, not merely what it believes.
+Compression defines what the agent is **allowed to do**, not merely what it predicts.
 
 ---
 
 ### Phase 3: Exploitation (Whitelist Execution)
 
-* Act cheaply and repeatably.
+* Act cheaply, repeatably, and at scale.
 * Stay within authorized boundaries.
 * Improve performance without expanding scope.
 
@@ -143,73 +176,62 @@ Triggered when:
 
 * errors cluster,
 * violations cannot be decorrelated,
-* or outcomes escape permitted bounds.
+* outcomes escape authorized bounds.
 
-Redesign explicitly **reopens the whitelist**, reintroducing distinctions and revising authorization.
+Redesign explicitly **reclaims boundary authority**, reintroducing distinctions and revising authorization.
 
 Redesign authority is a first-class survival variable.
 
 ---
 
-## 7. Derived Consequences
-
-* Boundary design precedes optimization.
-* Safe agency requires whitelists, not blacklists.
-* Decisions are cheap because action space was restricted upstream.
-* Performance can improve while future agency declines.
-* Confidence is not evidence of boundary adequacy.
-* Redesign authority determines survival more than optimization quality.
-
----
-
-## 8. Models Are Also Whitelist-Constrained
+## 9. Models Are Also Whitelist-Constrained
 
 Models are compressed representations operating **inside authorized abstractions**.
 
 Therefore:
 
 * models age,
-* models lie if treated as complete,
+* models mislead if treated as complete,
 * model redesign follows the same whitelist logic as policy redesign.
 
-There is no final model—only **phase-appropriate authorization under bounded resources**.
+There is no final model—only **phase-appropriate, executable authorization under bounded resources**.
 
 ---
 
-## 9. Values, Consent, and Governance
+## 10. Values, Consent, and Governance
 
 Although this framework does not prescribe goals, it implies:
 
-> Every authorization decision encodes values by determining which actions are permitted, for how long, and under whose authority.
+> Every authorization decision encodes values by determining which transitions are permitted, for how long, and under whose authority.
 
-Value alignment arises from:
+Legitimate governance requires:
 
-* explicit consent,
-* bounded scope,
-* symmetric risk,
-* and preserved redesign authority.
+* public access to authorization rules,
+* explicit scope boundaries,
+* symmetric exposure to irreversible risk,
+* preserved redesign authority.
 
 Governance failures are boundary failures.
 
 ---
 
-## 10. Core Synthesis (Whitelist Form)
+## 11. Core Synthesis (Exact Whitelist Form)
 
-**Intelligent action is the phase-appropriate, explicit authorization of a limited action space—chosen so that future decisions remain viable—until violations of assumed invariants force redesign under irreversible loss.**
+**Intelligent action is the phase-appropriate, exact authorization of a deliberately limited action space—chosen so that future action and redesign remain viable—until violations of assumed invariants force explicit revision under irreversible loss.**
 
 This explains:
 
 * why abstraction is unavoidable,
+* why exactness enables scale but accelerates failure when misapplied,
 * why efficiency creates brittleness,
 * why failures cluster,
-* why exit conditions matter,
 * and why authority over redesign determines survival.
 
 ---
 
 ## Scope Clarification
 
-This framework applies to biological, artificial, institutional, and hybrid agents wherever action requires irreversible abstraction under bounded resources.
+This framework applies to biological, artificial, institutional, and hybrid agents wherever action requires **exact execution under irreversible abstraction and bounded resources**.
 
 ---
 
@@ -228,16 +250,16 @@ Including these would risk over-closure, premature generality, and reduced acces
 
 ---
 
-## Why This Core Holds Together
+## Why This Core Holds
 
 This framework relies only on unavoidable facts:
 
 * resources are bounded,
 * observations are partial,
 * action is locally irreversible,
+* scale requires exact templates,
 * boundaries determine agency,
-* commitments collapse future options,
-* environments change.
+* redesign authority preserves viability.
 
 Everything else is downstream.
 
