@@ -1,27 +1,79 @@
-# A Structural Theory of Viability, Collapse, and Topological Invariants  
-*Under Bounded Cognition, Irreversibility, and Interface Constraints*
+# A Structural Theory Sketch of Viability, Collapse, and Topological Invariants  
+*Non-Redundancy Under Bounded Cognition, Irreversibility, and Interface Constraints*
 
 ---
 
 ## Abstract
 
-This document presents a **structural theory of viability** for bounded agents operating under irreversible dynamics, finite feedback, and interface-constrained action, observation, and redesign. The theory argues that when abstraction, approximation, and collapse are unavoidable, the only properties that reliably determine long-horizon viability are **topological invariants of reachability**.
+This document presents a **structural theory sketch of viability** for bounded agents operating under irreversible dynamics, finite feedback, and interface-constrained action, observation, coordination, and redesign.
 
-The framework integrates:
+The central claim is deliberately narrow:
+
+> **Under bounded cognition and irreversible dynamics, long-horizon viability is governed not by optimality, intelligence, or semantics, but by the preservation of non-redundant reachability relations across interfaces.**
+
+When abstraction, approximation, and collapse are unavoidable, most descriptive, metric, probabilistic, and semantic detail is necessarily discarded. What remains invariant under repeated collapse are **topological properties of reachability**: connectivity, disconnection, bottlenecks, redundancy, and minimal cut sets.
+
+This document does **not** propose a predictive model, learning algorithm, or optimization framework. Instead, it identifies **structural non-redundancies**—distinctions that cannot be discarded without destroying future actionability—across biological, computational, institutional, and linguistic systems.
+
+The sketch integrates:
 - irreversible collapse and loss allocation,
 - interface reachability and redesign limits,
+- conditional state expansion and mandatory retraction,
 - externalized memory and persistence,
 - descriptive versus routing representations,
 - origin markers as references for pre-collapse optionality,
 - and fast safety loops as structurally mandatory components.
 
-Rather than proposing a theory of meaning, intelligence, or optimization, this document clarifies **what cannot be discarded without destroying future actionability**, and why recurring architectural patterns are inevitable consequences of causal structure rather than design preference.
+The framework is intentionally incomplete and open-ended. Its purpose is to clarify what must be preserved for viability under constraint, and to provide a structural skeleton on which domain-specific theories, formalisms, and empirical work may be built.
+
+---
+
+## 0. Core Claim and Status of This Document
+
+This document advances a **single core structural claim**:
+
+> **Given bounded cognition, irreversible dynamics, and interface-constrained interaction, certain distinctions are non-redundant: once lost, no increase in intelligence, computation, or semantic richness can recover future reachability.**
+
+All other claims in this document elaborate consequences of this non-redundancy.
+
+### 0.1 What “Theory Sketch” Means Here
+
+This work is a *theory sketch* in the following precise sense:
+
+- It identifies **invariants** rather than full dynamics.
+- It establishes **necessity claims**, not sufficiency claims.
+- It characterizes **failure modes**, not success guarantees.
+- It constrains possible architectures without prescribing implementations.
+
+No claims are made that the framework is:
+- complete,
+- uniquely correct,
+- formally minimal,
+- or empirically exhaustive.
+
+The sketch is intended to remain open to:
+- further formalization (e.g., graph-theoretic, control-theoretic, or categorical),
+- empirical instantiation in specific domains,
+- revision as new constraints, counterexamples, or boundary cases are identified.
+
+### 0.2 What Is Not Claimed
+
+In particular, this document does **not** claim that:
+
+- preserving these invariants is sufficient for success,
+- viable systems are optimal, intelligent, or robust by default,
+- all failures are predictable in advance,
+- or that semantic meaning plays an intrinsic or irreducible role.
+
+The claim is strictly **negative and structural**:
+
+> **Certain losses cannot be compensated for downstream, and systems that survive over long horizons are forced to preserve the corresponding structures.**
 
 ---
 
 ## 1. Scope and Non-Claims
 
-This theory is intended as:
+This theory sketch is intended as:
 
 - a structural account of non-redundancy under irreversibility,
 - a framework for identifying viability-critical distinctions,
@@ -42,25 +94,25 @@ No claims of optimality, sufficiency, or normative correctness are made.
 
 We consider agents embedded in environments characterized by:
 
-1. **Bounded cognition**
-   - finite representational capacity,
-   - finite precision,
-   - finite attention and computation.
+### 2.1 Bounded Cognition
+- finite representational capacity,
+- finite precision,
+- finite attention and computation.
 
-2. **Irreversible dynamics**
-   - actions eliminate alternative futures,
-   - some failures are locally unrecoverable,
-   - time and causality are non-invertible.
+### 2.2 Irreversible Dynamics
+- actions eliminate alternative futures,
+- some failures are locally unrecoverable,
+- time and causality are non-invertible.
 
-3. **Finite and delayed feedback**
-   - feedback is noisy, partial, and late,
-   - corrective signals may arrive after commitments.
+### 2.3 Finite and Delayed Feedback
+- feedback is noisy, partial, and delayed,
+- corrective signals may arrive after commitments dominate outcomes.
 
-4. **Interface-constrained action and redesign**
-   - agents act, sense, coordinate, and modify themselves only via available interfaces,
-   - interfaces impose latency, bandwidth, precision, and authorization constraints.
+### 2.4 Interface-Constrained Action and Redesign
+- agents act, sense, coordinate, and modify themselves only via available interfaces,
+- interfaces impose latency, bandwidth, precision, and authorization constraints.
 
-Relaxing these assumptions invalidates parts of the theory.
+Relaxing these assumptions invalidates parts of the framework.
 
 ---
 
@@ -86,8 +138,8 @@ Collapse is structural, not epistemic.
 
 A transition between states is possible only if there exists a **causally continuous sequence of realizable intermediate states**, subject to:
 
-- time,
-- energy,
+- time constraints,
+- energy constraints,
 - interface constraints.
 
 Increased reasoning power cannot bypass latency or undo collapse.
@@ -99,7 +151,6 @@ Increased reasoning power cannot bypass latency or undo collapse.
 ### 4.1 Interfaces
 
 An interface specifies:
-
 - admissible inputs and outputs,
 - sequencing and timing constraints,
 - precision and error tolerance,
@@ -109,13 +160,13 @@ Interfaces include execution, perception, memory, communication, coordination, a
 
 ---
 
-### 4.2 Authorization vs. Correctness
+### 4.2 Authorization Versus Correctness
 
 Interface authorization enforces **syntactic conformance**, not semantic correctness.
 
 An action may be authorized yet globally unsafe or catastrophic.
 
-Loss of a critical interface collapses viability regardless of intent or intelligence.
+Loss of a critical interface collapses viability regardless of intent, intelligence, or correctness of belief.
 
 ---
 
@@ -167,7 +218,7 @@ Write authority is constrained to prevent catastrophic mutation under irreversib
 
 ---
 
-## 7. Descriptive vs. Routing Representations
+## 7. Descriptive Versus Routing Representations
 
 ### 7.1 Descriptive Representations
 
@@ -183,12 +234,7 @@ Properties:
 - context-repairable,
 - robust under noise.
 
-Examples:
-- natural language,
-- narratives,
-- diagnoses,
-- heuristics,
-- perceptual categories.
+Examples include natural language, narratives, diagnoses, heuristics, and perceptual categories.
 
 They degrade gracefully.
 
@@ -208,12 +254,7 @@ Properties:
 - non-redundant,
 - interface-bound.
 
-Examples:
-- identifiers,
-- addresses,
-- API endpoints,
-- binding sites,
-- physical conduits.
+Examples include identifiers, addresses, API endpoints, binding sites, and physical conduits.
 
 They fail catastrophically when incorrect.
 
@@ -243,7 +284,7 @@ Some representations are sensitive not to magnitude but to **connectivity**.
 
 Small errors can cause discrete failure when they sever paths.
 
-Catastrophic failure is usually a **topological cut**, not a gradual degradation.
+Catastrophic failure is typically a **topological cut**, not a gradual degradation.
 
 ---
 
@@ -337,7 +378,8 @@ Misidentification is unavoidable.
 Meaning is not intrinsic to symbols.
 
 Meaning is:
-> the preservation of distinctions necessary to maintain future reachability across interfaces.
+
+> **the preservation of distinctions necessary to maintain future reachability across interfaces.**
 
 This reframes:
 - synonymy as robustness,
@@ -348,9 +390,9 @@ No metaphysical residue remains—only constraints.
 
 ---
 
-## 14. What This Theory Provides
+## 14. What This Theory Sketch Provides
 
-This theory does not explain everything.
+This theory sketch does not explain everything.
 
 It explains:
 - why certain distinctions cannot be discarded,
@@ -358,7 +400,7 @@ It explains:
 - why some errors are fatal and others recoverable,
 - why loss is unavoidable and structurally allocated.
 
-It provides a **skeleton** on which domain-specific theories can be built.
+It provides a **structural skeleton** on which domain-specific theories can be constructed.
 
 ---
 
@@ -366,10 +408,10 @@ It provides a **skeleton** on which domain-specific theories can be built.
 
 Under bounded cognition and irreversible dynamics, viability depends on preserving **topological invariants of reachability**.
 
-Artifacts, agents, meanings, and metrics are replaceable.
+Artifacts, agents, meanings, and metrics are replaceable.  
 Interfaces, paths, and connectivity are not.
 
-This theory makes explicit what survives collapse, clarifies non-redundancy, and replaces vague notions of meaning and intelligence with structurally grounded necessity.
+This theory sketch makes explicit what survives collapse, clarifies non-redundancy under constraint, and replaces vague notions of meaning and intelligence with structurally grounded necessity.
 
 ---
 
