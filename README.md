@@ -1,263 +1,360 @@
-# A Structural Theory Sketch of Viability Under Irreversibility  
-## Reachability-Preserving Architecture and Allocatable Degrees of Freedom
+# A Structural Theory of Reachability, Degrees of Freedom, and Irreversible Allocation  
+## Architecture, Representation, and Human–Machine Systems
 
 ---
 
 ## Abstract
 
-This document presents a **structural theory sketch of viability** for systems operating under bounded cognition, irreversible dynamics, and interface-constrained interaction.
+This document presents a **structural theory of reachability under irreversible allocation**.  
+The theory applies across computational systems, software architectures, sensing, learning systems, and biological cognition.
 
-The central claim is **conditional and architectural**:
+The central claim is **architectural and conditional**:
 
-> **For systems that aim to preserve future reachability under irreversible allocation, unallocated state capacity and interface slack are non-redundant. Once irreversibly allocated, lost degrees of freedom cannot be recovered without global redesign.**
+> **For systems operating under bounded representational capacity and irreversible allocation, the set of computable or learnable distinctions is bounded by the remaining allocatable degrees of freedom. Once distinctions collapse irreversibly, future reachability is structurally foreclosed, independent of intelligence, optimization, or intent.**
 
-Such systems are referred to here as **Reachability-Preserving Architectures**.  
-Where technical precision is required, they may also be described as  
-**Degrees-of-Freedom-Preserving Architectures under Irreversibility**.
-
-The framework does **not** identify which future distinctions will be required.  
-Instead, it characterizes **what must remain structurally available for unknown distinctions to be representable at all**.
-
-This sketch focuses on:
-- irreversible allocation of state and memory,
-- interface fixation and coupling,
-- loss of allocatable degrees of freedom,
-- and the resulting foreclosure of future reachability.
-
-It does **not** propose algorithms, predictions, or optimal designs.  
-It provides a **structural lens** for reasoning about architectural viability under uncertainty.
+The framework does not predict which futures matter, nor which distinctions will be required.  
+It characterizes **what must remain structurally available for unknown distinctions to be representable at all**.
 
 ---
 
 ## 0. Scope and Status
 
-This document is a **theory sketch** in a strict sense:
+This document is a **theory sketch**, not a design prescription.
 
-- It identifies **necessary architectural constraints**, not sufficient designs.
-- It characterizes **irreversible failure modes**, not success guarantees.
-- It applies only **conditional on stated goals**, such as preserving future reachability.
+It:
+- identifies **necessary structural constraints**, not sufficient solutions,
+- characterizes **irreversible failure modes**, not success guarantees,
+- applies only **relative to stated goals** (e.g., long-horizon adaptability).
 
 It explicitly does **not** claim:
-- completeness,
-- uniqueness,
 - optimality,
+- completeness,
+- universality of goals,
 - or foreknowledge of future tasks.
 
 ---
 
 ## 1. Core Assumptions
 
-We consider systems with the following properties.
+### 1.1 Bounded Representational Capacity
 
-### 1.1 Bounded State Capacity
-
-The system has:
+Any real system has:
 - finite memory,
-- finite address or identifier space,
-- finite representational degrees of freedom.
+- finite state space,
+- finite bandwidth,
+- finite coordination capacity.
+
+This applies to:
+- CPUs,
+- software ecosystems,
+- learning systems,
+- biological brains,
+- institutions.
+
+---
 
 ### 1.2 Irreversible Allocation
 
-Certain allocations of state, representation, or interface:
-- cannot be reversed without loss,
-- cannot be reclaimed locally,
-- or require global coordination or redesign to undo.
+Some allocations of representational or architectural capacity are:
+- locally irreversible,
+- unrecoverable without global redesign,
+- or require prohibitive coordination to undo.
 
-Irreversibility may be physical, economic, organizational, or ecosystem-level.
+Irreversibility may be:
+- physical (hardware),
+- informational (quantization, compression),
+- organizational (interfaces, protocols),
+- biological (developmental constraints).
+
+---
 
 ### 1.3 Interface-Constrained Interaction
 
-All action, observation, coordination, and redesign occur via interfaces that impose:
-- bandwidth, latency, and precision limits,
-- coupling and failure-domain boundaries,
-- constraints on extensibility and substitution.
+All action, learning, coordination, and redesign occur through interfaces that impose:
+- bounded bandwidth,
+- timing constraints,
+- coupling and failure domains,
+- limited extensibility.
 
-Relaxing any of these assumptions invalidates the framework.
+Removing any of these assumptions invalidates the framework.
 
 ---
 
-## 2. Reachability as an Architectural Goal
+## 2. Reachability as an Architectural Property
 
-### 2.1 Meaning of “Reachability”
+### 2.1 Definition of Reachability
 
-**Reachability** refers to the set of future system states, interfaces, or interaction patterns that the architecture can still host **without global redesign**.
+**Reachability** is the set of future states, distinctions, or interaction patterns that a system can host **without global redesign**.
 
 Reachability is:
-- architectural, not semantic,
-- structural, not behavioral,
-- defined by available degrees of freedom, not intelligence or optimization.
+- structural, not semantic,
+- architectural, not behavioral,
+- defined by available degrees of freedom, not by intelligence or training.
 
-### 2.2 Reachability-Preserving Architecture
+---
 
-A **Reachability-Preserving Architecture** is one that:
+### 2.2 Reachability-Preserving Architectures
+
+A **Reachability-Preserving Architecture**:
 - avoids premature irreversible allocation,
-- preserves allocatable capacity at structurally hard-to-change layers,
-- maintains the ability to host future interfaces not yet specified.
+- preserves uncommitted representational capacity,
+- defers collapse of distinctions to higher, more flexible layers.
 
-This orientation is relative to irreversible commitments, not to time or scale.
-
----
-
-## 3. Collapse as Irreversible Allocation
-
-### 3.1 Collapse Is Structural, Not Merely Informational
-
-In this framework, *collapse* refers to:
-
-> **Irreversible allocation of allocatable degrees of freedom**, not merely lossy abstraction or compression.
-
-Examples include:
-- fixing schemas without extension or migration paths,
-- exhausting address, identifier, or namespace space,
-- hard-coding protocol fields,
-- binding coordination, discovery, and execution into a single failure domain.
-
-Once allocated, these degrees of freedom are no longer available for new interfaces.
+This orientation is relative to **irreversibility**, not to time or scale.
 
 ---
 
-### 3.2 Fixed Capacity Implies Bounded Futures
+## 3. Degrees of Freedom and Distinctions
 
-When allocatable capacity is fully consumed:
+### 3.1 Degrees of Freedom (DOFs)
 
-- no new independent variables can be introduced,
-- new tasks must overwrite, alias, or repurpose existing state,
-- fundamentally new interfaces become unreachable.
+Degrees of freedom correspond to:
+- independent representational variables,
+- dimensions of state space,
+- allocatable axes for distinction.
 
-The system may continue operating, but **only within a bounded future defined by past allocations**.
-
----
-
-## 4. Non-Redundancy Reframed
-
-### 4.1 What Is Non-Redundant
-
-Non-redundancy does **not** apply to:
-- specific variables,
-- particular semantics,
-- known task distinctions.
-
-Non-redundancy applies to:
-
-> **Unallocated state capacity and interface slack in architectures that aim to preserve future reachability under irreversibility.**
-
-This is a structural property, not a semantic one.
-
-### 4.2 Goal-Relative Non-Redundancy
-
-Non-redundancy is **conditional on architectural goals**.
-
-If a system’s goals include:
-- long-horizon viability,
-- accommodation of unknown tasks,
-- integration of future participants or interfaces,
-
-then preserving allocatable degrees of freedom is non-redundant.
-
-If goals are fixed, narrow, or terminal, such capacity may be redundant.
+They may be:
+- discrete (bits, symbols),
+- continuous (embedding dimensions),
+- structural (routing paths, coordination channels).
 
 ---
 
-## 5. Memory as the Canonical Case
+### 3.2 Distinctions and Equivalence Classes
 
-Memory illustrates the argument directly:
+A **distinction** exists if and only if:
+- two states can be mapped to different equivalence classes
+- under the available representation and computation.
 
-- Finite memory ⇒ finite state space.
-- Finite state space ⇒ finite independent variables.
-- No new variables ⇒ no new interfaces.
+Labels are irrelevant.
+Only **distinguishability under the architecture** matters.
 
-Therefore:
-
-> **Reachability-Preserving Architectures require spare representational capacity.**
-
-This reasoning applies equally to:
-- memory,
-- bandwidth,
-- namespace and identifier space,
-- schema extensibility.
+When multiple states map irreversibly to the same class, a **collapse of distinctions** occurs.
 
 ---
 
-## 6. Interfaces and Coupling
+## 4. Computation Does Not Create Distinctions
 
-### 6.1 The Primary Architectural Failure Mode
+A fundamental invariant:
 
-Large-scale architectural failure is most often caused by:
-- **mandatory coupling**, not centralization per se.
+> **Computation transforms distinctions; it does not create them.**
 
-A component becomes structurally hazardous when:
-- it is required for steady-state operation,
-- it shares a failure domain with unrelated functions,
-- it cannot be bypassed, replicated, or extended.
+If a distinction is not representable in the available state space:
+- no algorithm can recover it,
+- no learning can infer it,
+- no intelligence can compensate for its absence.
 
-### 6.2 Coordination Is Not the Enemy
-
-Central coordination is not prohibited.
-
-What is incompatible with reachability preservation is:
-- irreversible coupling of coordination to execution,
-- lack of allocatable capacity for alternative interaction paths.
+This is a generalized form of the pigeonhole principle.
 
 ---
 
-## 7. Future Foreclosure
+## 5. Deferred vs. Early Allocation
 
-### 7.1 What Is Lost
+### 5.1 Early Allocation
 
-When allocatable degrees of freedom are irreversibly consumed:
+Examples:
+- fixed-width integers,
+- rigid schemas,
+- non-extensible protocols,
+- early specialization in development.
 
-- certain future interfaces become unreachable,
-- not because they are incoherent or impossible,
-- but because the architecture cannot host them.
+Properties:
+- predictable,
+- efficient,
+- bounded.
 
-This loss is irreversible without global redesign.
-
-### 7.2 No Foreknowledge Required
-
-The framework does **not** assume knowledge of future tasks.
-
-It assumes only that:
-- unknown tasks may require new distinctions,
-- new distinctions require free representational capacity.
+Cost:
+- irreversible foreclosure of future distinctions.
 
 ---
 
-## 8. Limits of the Framework
+### 5.2 Deferred Allocation
 
-This sketch does **not**:
-- predict which futures matter,
-- determine how much slack is optimal,
-- prevent all architectural failure.
+Examples:
+- arbitrary-precision integers,
+- embeddings instead of one-hot encodings,
+- transitive dependency resolution,
+- exploratory learning phases.
 
-It establishes a **necessary constraint only**:
+Properties:
+- flexible,
+- reachability-preserving,
+- capacity-efficient.
 
-> **If a system aims to preserve future reachability under irreversible allocation, it must preserve allocatable degrees of freedom.**
+Cost:
+- overhead,
+- uncertainty,
+- delayed irreversibility.
+
+Deferred allocation does not eliminate collapse; it **moves it outward**.
 
 ---
 
-## 9. Core Claim (Formalized)
+## 6. Transitivity as an Architectural Lever
 
-The strongest defensible formulation is:
+### 6.1 Relations and Transitivity
 
-> **For Reachability-Preserving (or Degrees-of-Freedom-Preserving) Architectures operating under irreversibility, unallocated state capacity and interface slack are non-redundant. Irreversible allocation forecloses future reachability regardless of intelligence or intent.**
+Given a relation R:
+- Reflexive: aRa
+- Symmetric: aRb → bRa
+- Transitive: aRb && bRc → aRc
 
-Nothing stronger is claimed.
+Transitivity is not a law; it is a **policy choice**.
 
 ---
 
-## 10. Conclusion
+### 6.2 Dependency Systems
 
-Viability under irreversibility is not governed by:
-- intelligence,
+- Transitive dependencies ⇒ deferred allocation, hidden growth.
+- Non-transitive dependencies ⇒ early allocation, explicit bounds.
+
+Breaking transitivity bounds systems but forces early commitments.
+Allowing transitivity preserves reachability but hides costs.
+
+---
+
+## 7. Learning Systems and Embeddings
+
+### 7.1 One-Hot vs. Continuous Embeddings
+
+- One-hot representations allocate one DOF per symbol.
+- Embeddings reuse DOFs geometrically.
+
+Embeddings:
+- preserve reachability longer,
+- encode equivalence classes via geometry,
+- collapse distinctions softly instead of discretely.
+
+They do not escape DOF limits; they **optimize DOF usage**.
+
+---
+
+### 7.2 Equivalence Without Labels
+
+In embedding-based systems:
+- meaning is topological,
+- equivalence is defined by separability,
+- labels are incidental.
+
+A theory’s “truth,” for the system, is the partition of space it induces.
+
+---
+
+## 8. Hardware and Unary vs. Binary Representation
+
+Unary systems:
+- are computationally universal,
+- exhaust representational capacity immediately,
+- collapse reachability rapidly.
+
+Binary systems:
+- minimize irreversible allocation,
+- preserve reachability logarithmically,
+- are structurally optimal under irreversibility.
+
+Universality is irrelevant without capacity efficiency.
+
+---
+
+## 9. Human Cognition as an Architectural System
+
+### 9.1 Gray vs. White Matter (Structural View)
+
+- Gray matter ≈ local computation
+- White matter ≈ connectivity, coordination, integration
+
+White matter provides:
+- allocatable DOFs for recombination,
+- routing capacity between modules,
+- learning capacity for new domains.
+
+It is architectural slack, not knowledge.
+
+---
+
+### 9.2 Development and Irreversibility
+
+Early development allocates:
+- timing-sensitive coordination,
+- sensorimotor integration,
+- large-scale connectivity.
+
+These allocations are:
+- globally coupled,
+- costly to change,
+- largely irreversible.
+
+Later learning operates via:
+- reuse,
+- overlay,
+- compensation,
+not reclamation.
+
+---
+
+## 10. Relation Operators in Humans
+
+Humans rely on a limited set of **structural relation operators**:
+
+- Identity / equivalence
+- Symmetry / role reversal
+- Transitivity (gated)
+- Part–whole composition
+- Capability / affordance
+- Absence / deviation detection
+
+Disability or “extra” components are:
+- mismatches between expected equivalence classes and instances,
+- not semantic deficits,
+- but architectural misalignments.
+
+Accessibility is therefore an **interface problem**, not a moral abstraction.
+
+---
+
+## 11. Learning Is Not Garbage Collection
+
+Human learning does not perform full DOF reclamation.
+
+- Low-level coordination is not freed.
+- High-level representations are reused.
+- New skills layer over old ones.
+
+Learning is constrained reallocation, not reset.
+
+---
+
+## 12. Core Theorem (Structural)
+
+> **For any system operating under irreversible allocation, the set of computable, learnable, or expressible distinctions is exactly the set representable within its remaining allocatable degrees of freedom. Intelligence, optimization, and semantics cannot extend this set.**
+
+This is a necessary condition, not a sufficiency claim.
+
+---
+
+## 13. Implications
+
+- Architecture dominates capability.
+- Intelligence cannot override structural limits.
+- Early over-commitment forecloses futures.
+- Slack is non-redundant when reachability matters.
+- Inclusion requires architectural adaptation.
+
+---
+
+## 14. Conclusion
+
+Viability under irreversibility is governed not by:
+- cleverness,
 - semantics,
-- or optimization alone.
+- or optimization,
 
-It is governed by:
+but by:
 - what has been irreversibly allocated,
-- what allocatable capacity remains,
-- and which futures the architecture can still host.
+- what degrees of freedom remain,
+- and which distinctions are still representable.
 
-Systems that exhaust their allocatable degrees of freedom too early do not merely risk failure —  
+Systems that exhaust their allocatable capacity too early do not merely risk failure —  
 they **structurally bound their future reachability**.
 
 ---
