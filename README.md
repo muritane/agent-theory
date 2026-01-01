@@ -1,48 +1,64 @@
 # Reachability Under Irreversible Allocation  
-## A Structural Note on Degrees of Freedom, Representation, and Architecture
+## A Structural Synthesis of Existing Constraints on Representation
 
 ---
 
 ## What This Is
 
-This document is a **structural exploration**, not a prescription.
+This document is a **structural synthesis**, not a new physical law and not a proposal for optimal design.
 
-It describes a set of constraints that apply to any system that:
-- has finite representational capacity, and
-- makes allocations that cannot be freely undone.
+It makes explicit a constraint that already exists **in pieces** across multiple fields, under different names and formalisms. The contribution here is not discovery, but **unification and de-semanticization**.
 
-The goal is not to predict outcomes, optimize designs, or define what *should* matter.  
-The goal is to make explicit **what becomes impossible once certain structural commitments are made**.
+The goal is to state clearly:
 
-This applies equally to:
-- software systems,
-- learning systems,
-- hardware,
-- biological cognition,
-- organizations and institutions,
+> what becomes impossible once representational capacity is irreversibly committed.
 
-to the extent that they share the assumptions stated below.
+The document is written so that the argument can be **re-derived from first principles**, without reliance on authority, and so that the conclusion appears obvious in hindsight.
 
 ---
 
 ## What This Is Not
 
 This document does **not** claim:
+
+- a new conservation law in the Noether / physics sense,
 - optimal architectures,
 - universal goals,
 - inevitability of specific failures,
-- completeness,
-- or foreknowledge of future tasks.
+- completeness or finality.
 
-It does **not** argue that flexibility is always better than efficiency,  
-only that **efficiency achieved via irreversible allocation has structural costs**.
+It does **not** argue that flexibility is always better than efficiency.
+
+It argues only that:
+
+> **irreversible allocation of finite representational capacity imposes structural limits that no amount of intelligence, learning, or computation can overcome.**
+
+---
+
+## Scope
+
+This synthesis applies to any system that:
+
+- has **finite representational capacity**, and
+- makes **allocations that are costly or infeasible to undo**, and
+- operates and adapts **through constrained interfaces**.
+
+This includes (conditionally):
+
+- software systems,
+- machine learning systems,
+- hardware architectures,
+- biological cognition,
+- organizations and institutions,
+
+to the extent that they satisfy the assumptions below.
 
 ---
 
 ## Core Assumptions
 
 Everything that follows depends on these assumptions.  
-If any of them do not hold, the framework does not apply.
+If any assumption does not hold, the framework does not apply.
 
 ---
 
@@ -54,26 +70,33 @@ This includes limits on:
 - memory,
 - state space,
 - bandwidth,
-- coordination,
-- precision.
+- coordination channels,
+- precision,
+- addressable parameters.
 
-This is not a weakness of particular implementations; it is a property of physical and organizational systems.
+This is not an implementation flaw.  
+It is a property of physical, computational, and organizational systems.
 
 ---
 
 ### 2. Irreversible Allocation Exists
 
-Some uses of capacity cannot be easily undone.
+Some uses of representational capacity cannot be freely undone.
 
-Examples include:
+Examples:
 - fixed hardware layouts,
 - lossy compression,
 - rigid schemas or protocols,
 - early developmental specialization,
 - tightly coupled organizational processes.
 
-“Irreversible” here does not mean *absolutely impossible* to change,  
-only that reversal requires **global redesign, prohibitive coordination, or loss elsewhere**.
+“Irreversible” here does **not** mean logically impossible to change.
+
+It means:
+
+> reversal requires global redesign, prohibitive coordination, or loss elsewhere.
+
+Irreversibility is defined **relative to the system’s own feasible resources**, not to theoretical possibility.
 
 ---
 
@@ -85,9 +108,10 @@ Interfaces impose:
 - limited bandwidth,
 - timing constraints,
 - coupling and failure domains,
-- restricted extensibility.
+- restricted extensibility,
+- partial observability.
 
-No system can directly rewrite itself without going through such constraints.
+No system can directly rewrite itself without passing through such constraints.
 
 ---
 
@@ -102,7 +126,8 @@ Reachability is:
 - structural, not behavioral,
 - defined by what the system *can represent*, not by what it wants or tries to do.
 
-Intelligence, optimization, and training operate *within* reachability; they do not define it.
+Optimization, intelligence, and learning operate **within** reachability.  
+They do not define it.
 
 ---
 
@@ -115,30 +140,40 @@ Examples:
 - dimensions in an embedding,
 - independent parameters,
 - routing paths,
-- coordination channels.
+- coordination channels,
+- roles in an organization.
 
-Degrees of freedom are the **allocatable resource** that determines what distinctions can exist.
+Only **addressable degrees of freedom** matter.  
+Latent or inaccessible DOF that cannot be acted upon through interfaces are structurally equivalent to nonexistence.
+
+Degrees of freedom are the allocatable resource that determines what distinctions can exist.
 
 ---
 
 ## Distinctions and Collapse
 
 A **distinction** exists if and only if:
+
 - two states can be mapped to different equivalence classes
 - under the system’s available representation and computation.
 
-Labels and interpretations are irrelevant.  
+Labels, semantics, and interpretations are irrelevant.  
 Only **distinguishability under the architecture** matters.
-
-When multiple states are forced to map to the same equivalence class and this mapping cannot be reversed, a **collapse of distinctions** occurs.
-
-Once collapsed, those distinctions are no longer reachable.
 
 ---
 
-## An Invariant: Computation Does Not Create Distinctions
+### Collapse of Distinctions
 
-A core structural constraint:
+When multiple states are forced to map to the same equivalence class and this mapping cannot be reversed without global redesign, a **collapse of distinctions** occurs.
+
+Once collapsed:
+- the distinction is no longer representable,
+- the distinction is no longer reachable,
+- no later process can recover it exactly.
+
+---
+
+## A Structural Invariant
 
 > **Computation transforms distinctions; it does not create them.**
 
@@ -147,7 +182,12 @@ If a distinction is not representable in the available state space:
 - no learning process can infer it,
 - no amount of intelligence can compensate.
 
-This is a direct consequence of finite capacity and irreversible mapping, not a limitation of specific methods.
+This follows directly from:
+- finite capacity, and
+- irreversible many-to-one mappings.
+
+This is not a claim about specific algorithms.  
+It is a structural constraint.
 
 ---
 
@@ -168,7 +208,7 @@ Properties:
 - efficient,
 - bounded.
 
-Cost:
+Structural cost:
 - irreversible foreclosure of future distinctions.
 
 ---
@@ -188,33 +228,70 @@ Properties:
 - reachability-preserving,
 - capacity-efficient in the short term.
 
-Cost:
+Structural cost:
 - overhead,
 - uncertainty,
-- delayed but not eliminated collapse.
+- delayed (not eliminated) collapse.
 
-Deferred allocation does not avoid limits; it **moves them outward**.
+Deferred allocation does not avoid limits.  
+It **moves them outward**.
 
 ---
 
 ## Learning Is Not Reclamation
 
-Learning reallocates within existing structure.
+Learning reallocates capacity **within existing structure**.
 
 It does not:
-- fully reclaim collapsed degrees of freedom,
-- reset low-level coordination,
-- erase early commitments.
+- recreate collapsed degrees of freedom,
+- restore lost observability,
+- erase early architectural commitments.
 
-New capabilities are layered on top of old ones through reuse and approximation, not through full structural recovery.
+New capabilities arise through:
+- reuse,
+- approximation,
+- layering,
+
+not through full structural recovery.
 
 ---
 
-## A Structural Theorem
+## A Structural Constraint (Synthesis)
 
-> **For any system operating under irreversible allocation, the set of computable, learnable, or expressible distinctions is exactly the set representable within its remaining allocatable degrees of freedom. Intelligence, optimization, and semantics cannot extend this set.**
+> **For any system operating under finite representational capacity and irreversible allocation, the set of computable, learnable, or expressible distinctions is exactly the set representable within its remaining addressable degrees of freedom.**
 
-This is a **necessary condition**, not a claim of sufficiency or optimality.
+Intelligence, optimization, semantics, and training **cannot extend this set**.
+
+This is a **necessary structural condition**, not a claim of sufficiency or optimality.
+
+---
+
+## Where This Already Exists (In Pieces)
+
+This constraint is not new.  
+It appears under different names and formalisms across fields:
+
+- **Information theory**  
+  (data processing inequality, channel capacity, irreversibility of lossy mappings)
+
+- **Statistical learning theory**  
+  (VC dimension, hypothesis class limits, no free lunch)
+
+- **Control theory and systems engineering**  
+  (observability, controllability, minimal realizations)
+
+- **Computer architecture**  
+  (fixed representations, hardware ceilings, irreversible design choices)
+
+- **Biology and cognition**  
+  (developmental canalization, critical periods, specialization)
+
+- **Organizations and institutions**  
+  (path dependence, Conway’s Law, institutional lock-in)
+
+Each treats a projection of the same phenomenon.
+
+This document makes the **shared invariant explicit**, stripped of domain-specific semantics.
 
 ---
 
@@ -222,13 +299,13 @@ This is a **necessary condition**, not a claim of sufficiency or optimality.
 
 If long-horizon adaptability matters, then:
 
-- Architecture dominates capability.
-- Over-commitment forecloses futures.
-- Slack is not redundant; it is reachability.
-- Inclusion and accessibility are properties of interfaces, not intentions.
-- Efficiency achieved too early has structural cost.
+- architecture dominates capability,
+- over-commitment forecloses futures,
+- slack is not redundancy; it is reachability,
+- inclusion and accessibility are properties of interfaces, not intentions,
+- efficiency achieved too early has structural cost.
 
-If adaptability does *not* matter, these implications may be irrelevant.
+If adaptability does not matter, these implications may be irrelevant.
 
 ---
 
@@ -254,7 +331,7 @@ It is intended to:
 - surface hidden constraints,
 - and remain open to correction.
 
-It makes explicit claims only where the structure requires them.
+Claims are made only where the structure requires them.
 
 ---
 
