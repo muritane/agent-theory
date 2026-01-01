@@ -13,23 +13,22 @@ It does not propose:
 - normative criteria such as adaptability or efficiency,
 - or new physical or computational laws.
 
-Its purpose is to make explicit a constraint that already exists—implicitly—across multiple domains:
+Its purpose is to make explicit a constraint that already exists—implicitly—across multiple domains and has been encountered repeatedly in practice:
 
 > **Once representational capacity is irreversibly allocated, the set of distinctions a system can host is structurally constrained by the remaining addressable degrees of freedom.**
 
-The contribution is **clarification and unification**, not discovery.
+The contribution is **clarification and alignment**, not discovery.
 
 ---
 
-## What This Document Is Not
+## How to Read This Document
 
-This document does **not** claim:
-- that flexibility is superior to early commitment,
-- that deferred allocation is generally desirable,
-- that learning failures are inevitable,
-- or that specific architectures are flawed.
+This document does not argue for the existence of the constraint described here.  
+It points to it.
 
-Any preference for adaptability, efficiency, robustness, or coordination is **external to this framework** and must be supplied by downstream task requirements.
+The constraint has been encountered often enough that it is no longer informative to test it repeatedly through optimization, scaling, or refinement within a fixed representation.
+
+If a reader wishes to verify its existence empirically, they are free to do so.
 
 ---
 
@@ -46,6 +45,7 @@ Examples may include:
 - computational systems,
 - learning systems,
 - hardware architectures,
+- communication protocols,
 - biological or cognitive systems,
 - organizations or institutions,
 
@@ -82,6 +82,7 @@ It means that reversal requires one or more of the following:
 
 - global redesign,
 - coordination across many components,
+- migration or replacement,
 - loss of information elsewhere,
 - external intervention beyond the system’s normal interfaces.
 
@@ -110,9 +111,10 @@ A **degree of freedom (DOF)** is an independent axis along which a system can re
 
 Examples include:
 - bits or registers,
+- neurons or parameters,
 - embedding dimensions,
-- parameters,
 - routing paths,
+- message fields,
 - control channels,
 - organizational roles.
 
@@ -120,6 +122,122 @@ Only **addressable DOFs** matter.
 Latent or inaccessible variation that cannot be acted upon through interfaces is structurally equivalent to nonexistence.
 
 DOFs are the allocatable resource that determines which distinctions can be represented.
+
+---
+
+## Already Formalized Degrees of Freedom (By Domain)
+
+Degrees of freedom are not abstract or informal in most domains.  
+They are already explicitly counted, bounded, and engineered around.
+
+This framework does not introduce new DOFs.  
+It aligns existing ones.
+
+---
+
+### Machine Learning
+
+Formalized DOFs include:
+- number of neurons,
+- number of layers,
+- embedding dimension,
+- parameter count,
+- activation precision,
+- attention head count,
+- context window length.
+
+**Known wall:**  
+A single linear neuron cannot represent XOR.  
+No amount of learning, data, or optimization alters this.  
+The only remedy is representational expansion.
+
+---
+
+### Information Theory and Digital Systems
+
+Formalized DOFs include:
+- number of bits,
+- register width,
+- address space size,
+- channel capacity,
+- entropy bounds.
+
+**Known wall:**  
+An *n*-bit register cannot represent more than 2ⁿ states.  
+Once bits are overwritten or truncated, the original distinction is unrecoverable.
+
+---
+
+### Programming Languages and Runtimes
+
+Formalized DOFs include:
+- fixed-width integer ranges,
+- stack size limits,
+- heap size limits,
+- pointer width,
+- message size limits.
+
+Deferred allocation (e.g., dynamically sized integers) preserves distinctions by routing representation through additional interfaces (heap, RAM), but introduces latency, coordination overhead, and unpredictability.
+
+The cost is displaced, not eliminated.
+
+---
+
+### Networking and Communication Protocols
+
+Formalized DOFs include:
+- packet size limits (MTU),
+- header field widths,
+- sequence number ranges,
+- window sizes,
+- bandwidth constraints.
+
+**Known wall:**  
+A packet cannot carry more information than its payload allows.  
+Lost or truncated packets do not reconstruct themselves.
+
+Fragmentation and retransmission preserve reachability at the cost of coordination.
+
+---
+
+### Storage Systems
+
+Formalized DOFs include:
+- block sizes,
+- page sizes,
+- schema field widths,
+- write-cycle limits (e.g., flash endurance).
+
+**Known wall:**  
+Once information is discarded or storage media wear out, recovery requires migration or replacement.
+
+This is a physical constraint, not a design preference.
+
+---
+
+### Hardware Systems
+
+Formalized DOFs include:
+- RAM size,
+- disk capacity,
+- bus width,
+- cache size,
+- power budget.
+
+A device cannot allocate more internal capacity than it physically contains.  
+Expansion requires external intervention.
+
+---
+
+### Physical Space (Trivial but Instructive)
+
+A refrigerator has fixed volume.
+
+Shelves can be rearranged.  
+Internal volume cannot be increased without replacing the appliance.
+
+Reallocation is possible.  
+Expansion requires redesign.
 
 ---
 
@@ -144,20 +262,21 @@ Once collapsed:
 - the distinction is no longer addressable,
 - no internal process can exactly recover it.
 
-Approximation, inference, or probabilistic substitution may occur, but this does not restore the original distinction.
+Approximation or inference may occur, but this does not restore the original distinction.
 
 ---
 
-## A Structural Constraint (Invariant)
+## A Structural Constraint
 
-> **Computation can transform and reallocate distinctions only to the extent that the underlying representation preserves sufficient independent degrees of freedom.**
+> **Given finite representational capacity and irreversible allocation, no sequence of internal operations can recover distinctions that were eliminated by earlier many-to-one allocation.**
 
-If an irreversible many-to-one allocation has eliminated the information required to separate two states:
-- no algorithm can recover that separation,
+If the information required to separate two states was not preserved:
+- no algorithm can recover it,
 - no learning process can infer it,
-- no increase in optimization power can compensate.
+- no increase in optimization power compensates.
 
-This constraint excludes the claim that optimization or learning can recover distinctions eliminated by earlier irreversible allocation, except where sufficient DOFs were preserved.
+This is not a performance limitation.  
+It is a representational boundary.
 
 ---
 
@@ -176,32 +295,21 @@ Redesign cost may include:
 
 Reachability is therefore **graded**, not binary.
 
-Optimization and learning operate **within** the currently reachable set.  
-They may shift allocations among existing DOFs but cannot exceed structural limits imposed by irreversible commitments without incurring redesign cost.
+Optimization and learning operate **within** the currently reachable set.
 
 ---
 
-## Allocation and Task Requirements
+## Known Walls (Canonical Examples)
 
-Allocation of DOFs is neither good nor bad in itself.  
-It is a structural choice whose adequacy is determined by downstream task requirements.
+These failures are not hypothetical.
 
-### Example: Rigid Body Representation
+- A single linear neuron cannot represent XOR.
+- A fixed-width integer cannot represent values outside its range.
+- A lossy compression cannot be inverted without side information.
+- A system that did not log a distinction cannot reconstruct it later.
+- Centralized coordination cannot express decentralized autonomy without restructuring.
 
-Consider a task requiring precise representation of a rigid cube’s position and orientation.
-
-- Fewer than **6 DOFs** are insufficient to uniquely represent pose.
-- Exactly **6 DOFs** are sufficient and minimal for efficient pose tracking.
-- More than **6 DOFs** may be required if the task also demands:
-  - visualization attributes (color, mesh),
-  - identifiers or namespaces,
-  - uncertainty annotations,
-  - interaction affordances.
-
-In visualization systems (e.g., robotics tooling), additional DOFs are often allocated not for physical pose, but for auxiliary representational needs.
-
-The framework does not privilege any choice.  
-It only states that **once DOFs are allocated or foreclosed, the corresponding distinctions become reachable or unreachable accordingly**.
+In each case, the only remedy is representational change.
 
 ---
 
@@ -220,61 +328,49 @@ It does not:
 - restore collapsed distinctions,
 - bypass irreversible allocation.
 
-Learning outcomes are therefore bounded by the structure it operates within.
+Learning succeeds only when the relevant distinctions were implicitly preserved.
 
 ---
 
 ## Scaling and Extension
 
-Adding capacity later—through scaling or retrofitting—is itself an allocation decision.
+Adding capacity later is itself an allocation decision.
 
 Such changes:
 - introduce new interfaces,
 - consume coordination resources,
 - incur migration costs,
-- create new irreversibilities at a higher level.
+- create new irreversibilities at higher levels.
 
-Scaling can expand reachability **prospectively**, but it does not retroactively recover distinctions that were never preserved.
+Scaling expands reachability prospectively.  
+It does not retroactively restore eliminated distinctions.
 
 ---
 
 ## Relation to Existing Theory
 
-This constraint appears in different forms across domains:
+This constraint appears across domains:
 
 - information theory (irreversibility, channel limits),
 - learning theory (hypothesis class constraints),
 - control theory (observability and controllability),
 - computer architecture (fixed representations),
 - biology (developmental specialization),
-- organizations (path dependence).
+- organizational theory (path dependence).
 
 Each addresses a projection of the same structural phenomenon.
 
-This document makes the shared constraint explicit without domain-specific semantics.
-
----
-
-## Non-Claims and Underspecification
-
-This framework does not currently provide:
-- a universal unit for remaining DOFs,
-- a scalar measure of reachability,
-- a complete design calculus.
-
-Any operationalization will be domain-specific and approximate.
-
-The framework is therefore **descriptive first**, not prescriptive.
+This document aligns them without domain-specific semantics.
 
 ---
 
 ## Summary
 
-- Systems allocate finite representational degrees of freedom.
+- Systems allocate finite representational DOFs.
 - Some allocations are costly or infeasible to reverse.
 - These allocations determine which distinctions remain reachable.
-- Computation and learning operate within, not beyond, these structural limits.
-- Adequacy is determined by downstream task requirements, not by the framework itself.
+- Learning and optimization operate within these bounds.
+- Expansion requires redesign, not effort.
 
 ---
 
@@ -282,8 +378,8 @@ The framework is therefore **descriptive first**, not prescriptive.
 
 This is a working structural note.
 
-Its purpose is to clarify constraints, not to dictate goals.  
-Any normative interpretation must be supplied externally.
+It points to constraints that already exist.  
+It does not prescribe goals.
 
 ---
 
