@@ -1,137 +1,106 @@
 # Reachability Under Irreversible Allocation  
-## A Structural Synthesis of Existing Constraints on Representation
+## A Structural Account of Representational Degrees of Freedom
 
 ---
 
-## What This Is
+## What This Document Is
 
-This document is a **structural synthesis**, not a new physical law and not a proposal for optimal design.
+This document presents a **structural description** of how representational degrees of freedom (DOFs) behave in systems with finite capacity and irreversible allocation.
 
-It makes explicit a constraint that already exists **in pieces** across multiple fields, under different names and formalisms. The contribution here is not discovery, but **unification and de-semanticization**.
+It does not propose:
+- optimal design strategies,
+- preferred system goals,
+- normative criteria such as adaptability or efficiency,
+- or new physical or computational laws.
 
-The goal is to state clearly:
+Its purpose is to make explicit a constraint that already exists—implicitly—across multiple domains:
 
-> what becomes impossible once representational capacity is irreversibly committed.
+> **Once representational capacity is irreversibly allocated, the set of distinctions a system can host is structurally constrained by the remaining addressable degrees of freedom.**
 
-The document is written so that the argument can be **re-derived from first principles**, without reliance on authority, and so that the conclusion appears obvious in hindsight.
+The contribution is **clarification and unification**, not discovery.
 
 ---
 
-## What This Is Not
+## What This Document Is Not
 
 This document does **not** claim:
+- that flexibility is superior to early commitment,
+- that deferred allocation is generally desirable,
+- that learning failures are inevitable,
+- or that specific architectures are flawed.
 
-- a new conservation law in the Noether / physics sense,
-- optimal architectures or design prescriptions,
-- universal goals or value judgments,
-- inevitability of specific failures,
-- completeness, finality, or exclusivity.
-
-It does **not** argue that flexibility is always better than efficiency.
-
-It argues only that:
-
-> **irreversible allocation of finite representational capacity imposes structural limits that no amount of intelligence, learning, optimization, or computation can overcome.**
+Any preference for adaptability, efficiency, robustness, or coordination is **external to this framework** and must be supplied by downstream task requirements.
 
 ---
 
-## Scope
+## Scope of Applicability
 
-This synthesis applies to any system that:
+This framework applies to any system that satisfies all of the following:
 
-- has **finite representational capacity**, and
-- makes **allocations that are costly or infeasible to undo**, and
-- operates and adapts **through constrained interfaces**.
+- finite representational capacity,
+- allocation of that capacity across independent DOFs,
+- the existence of allocations that are costly or infeasible to reverse,
+- operation and modification mediated by constrained interfaces.
 
-This includes (conditionally):
-
-- software systems,
-- machine learning systems,
+Examples may include:
+- computational systems,
+- learning systems,
 - hardware architectures,
-- biological cognition,
-- organizations and institutions,
+- biological or cognitive systems,
+- organizations or institutions,
 
-to the extent—and only to the extent—that they satisfy the assumptions below.
+but only insofar as these assumptions hold.
+
+If any assumption fails, the framework does not apply.
 
 ---
 
 ## Core Assumptions
 
-Everything that follows depends on these assumptions.  
-If any assumption does not hold, the framework does not apply.
+### 1. Finite Representational Capacity
 
----
-
-### 1. Bounded Representational Capacity
-
-Any real system has finite representational capacity.
+Any realizable system has finite capacity to represent distinctions.
 
 This includes limits on:
 - memory,
-- state space,
+- parameters,
+- precision,
 - bandwidth,
 - coordination channels,
-- precision,
-- addressable parameters.
+- addressable state.
 
-This is not an implementation flaw or engineering accident.  
-It is a property of physical, computational, and organizational systems operating under resource constraints.
-
-Capacity may be large relative to a task, but it is never infinite relative to all possible distinctions.
+Capacity may be large relative to a specific task, but it is never infinite relative to all possible distinctions.
 
 ---
 
 ### 2. Irreversible Allocation Exists
 
-Some uses of representational capacity cannot be freely undone.
+Some allocations of representational capacity cannot be freely undone.
 
-Examples include:
-- fixed hardware layouts,
-- lossy compression,
-- rigid schemas or protocols,
-- early developmental specialization,
-- tightly coupled organizational processes,
-- entrenched interfaces or APIs.
+“Irreversible” does not mean logically impossible to change.  
+It means that reversal requires one or more of the following:
 
-“Irreversible” here does **not** mean logically impossible to change.
+- global redesign,
+- coordination across many components,
+- loss of information elsewhere,
+- external intervention beyond the system’s normal interfaces.
 
-It means:
-
-> reversal requires global redesign, prohibitive coordination, external intervention, or loss elsewhere in the system.
-
-Irreversibility is defined **relative to the system’s own feasible resources**, not to theoretical or idealized possibility.
+Irreversibility is defined **relative to the system’s own feasible resources**.
 
 ---
 
 ### 3. Interaction Is Interface-Constrained
 
-All action, learning, adaptation, and redesign occur through interfaces.
+All learning, optimization, adaptation, and redesign occur through interfaces.
 
 Interfaces impose:
-- limited bandwidth,
-- timing constraints,
-- coupling and failure domains,
-- restricted extensibility,
-- partial observability.
+- bandwidth limits,
+- latency,
+- partial observability,
+- coupling constraints,
+- failure domains.
 
-No system can directly rewrite itself “from outside itself.”  
-Self-modification, meta-learning, and architectural change are themselves mediated processes that consume representational capacity and operate under interface constraints.
-
----
-
-## Reachability
-
-### Definition
-
-**Reachability** is the set of future states, distinctions, or interaction patterns a system can host **without global redesign**.
-
-Reachability is:
-- architectural, not semantic,
-- structural, not behavioral,
-- defined by what the system *can represent*, not by what it wants, values, or attempts to optimize.
-
-Optimization, intelligence, and learning operate **within** reachability.  
-They do not define or expand it.
+Self-modification and meta-learning are themselves mediated processes and consume representational capacity.
 
 ---
 
@@ -140,221 +109,181 @@ They do not define or expand it.
 A **degree of freedom (DOF)** is an independent axis along which a system can represent variation.
 
 Examples include:
-- bits in memory,
-- dimensions in an embedding,
-- independent parameters,
+- bits or registers,
+- embedding dimensions,
+- parameters,
 - routing paths,
-- coordination channels,
-- roles or positions in an organization.
+- control channels,
+- organizational roles.
 
-Only **addressable degrees of freedom** matter.  
-Latent, inaccessible, or non-manipulable DOF that cannot be acted upon through interfaces are structurally equivalent to nonexistence.
+Only **addressable DOFs** matter.  
+Latent or inaccessible variation that cannot be acted upon through interfaces is structurally equivalent to nonexistence.
 
-Degrees of freedom are the allocatable resource that determines what distinctions can exist.
+DOFs are the allocatable resource that determines which distinctions can be represented.
 
 ---
 
-## Distinctions and Collapse
+## Distinctions
 
 A **distinction** exists if and only if:
 
-- two states can be mapped to different equivalence classes
+- two states map to different equivalence classes
 - under the system’s available representation and computation.
 
-Labels, semantics, interpretations, and intentions are irrelevant.  
-Only **distinguishability under the architecture** matters.
+Semantics, labels, intentions, and interpretations are irrelevant.  
+Only **architectural distinguishability** matters.
 
 ---
 
-### Collapse of Distinctions
+## Collapse of Distinctions
 
-When multiple states are forced to map to the same equivalence class and this mapping cannot be reversed without global redesign, a **collapse of distinctions** occurs.
+When multiple states are forced into the same equivalence class and this mapping cannot be reversed without irreversible cost, a **collapse of distinctions** occurs.
 
 Once collapsed:
 - the distinction is no longer representable,
-- the distinction is no longer reachable,
-- no later internal process can recover it exactly.
+- the distinction is no longer addressable,
+- no internal process can exactly recover it.
 
-Approximation, abstraction, or probabilistic inference may substitute for the lost distinction, but they do not restore it.
+Approximation, inference, or probabilistic substitution may occur, but this does not restore the original distinction.
 
 ---
 
-## A Structural Invariant
+## A Structural Constraint (Invariant)
 
-> **Computation transforms distinctions; it does not create them.**
+> **Computation can transform and reallocate distinctions only to the extent that the underlying representation preserves sufficient independent degrees of freedom.**
 
-If a distinction is not representable in the available state space:
-- no algorithm can recover it,
+If an irreversible many-to-one allocation has eliminated the information required to separate two states:
+- no algorithm can recover that separation,
 - no learning process can infer it,
-- no amount of intelligence can compensate.
+- no increase in optimization power can compensate.
 
-This follows directly from:
-- finite representational capacity, and
-- irreversible many-to-one mappings.
-
-This is not a claim about specific algorithms, models, or training regimes.  
-It is a structural constraint.
+This constraint excludes the claim that optimization or learning can recover distinctions eliminated by earlier irreversible allocation, except where sufficient DOFs were preserved.
 
 ---
 
-## Allocation Timing
+## Reachability
 
-### Early Allocation
+### Definition
 
-Early allocation commits degrees of freedom sooner.
+**Reachability** is the set of distinctions a system can represent and act upon **without exceeding a given redesign cost threshold**.
 
-Examples include:
-- fixed-width representations,
-- rigid schemas,
-- non-extensible protocols,
-- early specialization in learning or organization.
+Redesign cost may include:
+- coordination bandwidth,
+- migration effort,
+- downtime,
+- information loss,
+- external intervention.
 
-Properties:
-- predictable,
-- efficient,
-- bounded.
+Reachability is therefore **graded**, not binary.
 
-Structural cost:
-- irreversible foreclosure of future distinctions.
+Optimization and learning operate **within** the currently reachable set.  
+They may shift allocations among existing DOFs but cannot exceed structural limits imposed by irreversible commitments without incurring redesign cost.
 
 ---
 
-### Deferred Allocation
+## Allocation and Task Requirements
 
-Deferred allocation postpones commitment.
+Allocation of DOFs is neither good nor bad in itself.  
+It is a structural choice whose adequacy is determined by downstream task requirements.
 
-Examples include:
-- variable-length representations,
-- embeddings instead of explicit symbols,
-- late binding,
-- exploratory or self-organizing phases.
+### Example: Rigid Body Representation
 
-Properties:
-- flexible,
-- reachability-preserving,
-- capacity-efficient in the short term.
+Consider a task requiring precise representation of a rigid cube’s position and orientation.
 
-Structural cost:
-- overhead,
-- uncertainty,
-- delayed (not eliminated) collapse.
+- Fewer than **6 DOFs** are insufficient to uniquely represent pose.
+- Exactly **6 DOFs** are sufficient and minimal for efficient pose tracking.
+- More than **6 DOFs** may be required if the task also demands:
+  - visualization attributes (color, mesh),
+  - identifiers or namespaces,
+  - uncertainty annotations,
+  - interaction affordances.
 
-Deferred allocation does not avoid limits.  
-It **moves them outward** in time or complexity.
+In visualization systems (e.g., robotics tooling), additional DOFs are often allocated not for physical pose, but for auxiliary representational needs.
+
+The framework does not privilege any choice.  
+It only states that **once DOFs are allocated or foreclosed, the corresponding distinctions become reachable or unreachable accordingly**.
 
 ---
 
-## Learning Is Not Reclamation
+## Learning and Reallocation
 
-Learning reallocates capacity **within existing structure**.
+Learning reallocates representational capacity among existing DOFs.
+
+It may:
+- refine partitions,
+- compress representations,
+- reuse structure,
+- trade precision for coverage.
 
 It does not:
-- recreate collapsed degrees of freedom,
-- restore lost observability,
-- erase early architectural commitments.
+- recreate eliminated DOFs,
+- restore collapsed distinctions,
+- bypass irreversible allocation.
 
-New capabilities arise through:
-- reuse,
-- approximation,
-- layering,
-- compression trade-offs,
-
-not through full structural recovery of lost distinctions.
+Learning outcomes are therefore bounded by the structure it operates within.
 
 ---
 
-## Scaling and Retrofitting (Explicit Boundary)
+## Scaling and Extension
 
-Adding capacity later—through scaling, retrofitting, or extension—is itself an allocation decision.
+Adding capacity later—through scaling or retrofitting—is itself an allocation decision.
 
 Such changes:
-- consume coordination bandwidth,
 - introduce new interfaces,
-- incur migration and compatibility costs,
-- remain subject to irreversibility at a higher level.
+- consume coordination resources,
+- incur migration costs,
+- create new irreversibilities at a higher level.
 
-Scaling can expand reachability **only to the extent that interfaces and coordination permit**.  
-It does not retroactively recover distinctions that were never preserved.
-
----
-
-## A Structural Constraint (Synthesis)
-
-> **For any system operating under finite representational capacity and irreversible allocation, the set of computable, learnable, or expressible distinctions is exactly the set representable within its remaining addressable degrees of freedom.**
-
-Intelligence, optimization, semantics, and training **cannot extend this set**.
-
-This is a **necessary structural condition**, not a claim of sufficiency, optimality, or inevitability.
+Scaling can expand reachability **prospectively**, but it does not retroactively recover distinctions that were never preserved.
 
 ---
 
-## Where This Already Exists (In Pieces)
+## Relation to Existing Theory
 
-This constraint is not new.  
-It appears under different names and formalisms across fields:
+This constraint appears in different forms across domains:
 
-- **Information theory**  
-  (data processing inequality, channel capacity, irreversibility of lossy mappings)
+- information theory (irreversibility, channel limits),
+- learning theory (hypothesis class constraints),
+- control theory (observability and controllability),
+- computer architecture (fixed representations),
+- biology (developmental specialization),
+- organizations (path dependence).
 
-- **Statistical learning theory**  
-  (VC dimension, hypothesis class limits, no free lunch)
+Each addresses a projection of the same structural phenomenon.
 
-- **Control theory and systems engineering**  
-  (observability, controllability, minimal realizations)
-
-- **Computer architecture**  
-  (fixed representations, hardware ceilings, irreversible design choices)
-
-- **Biology and cognition**  
-  (developmental canalization, critical periods, specialization)
-
-- **Organizations and institutions**  
-  (path dependence, Conway’s Law, institutional lock-in)
-
-Each treats a projection of the same phenomenon.
-
-This document makes the **shared invariant explicit**, stripped of domain-specific semantics.
+This document makes the shared constraint explicit without domain-specific semantics.
 
 ---
 
-## Implications (Conditional)
+## Non-Claims and Underspecification
 
-If long-horizon adaptability matters, then:
+This framework does not currently provide:
+- a universal unit for remaining DOFs,
+- a scalar measure of reachability,
+- a complete design calculus.
 
-- architecture dominates capability,
-- over-commitment forecloses futures,
-- slack is not redundancy; it is reachability,
-- inclusion and accessibility are properties of interfaces, not intentions,
-- efficiency achieved too early has structural cost.
+Any operationalization will be domain-specific and approximate.
 
-If adaptability does not matter, these implications may be irrelevant.
+The framework is therefore **descriptive first**, not prescriptive.
 
 ---
 
 ## Summary
 
-Systems do not fail only because of bad decisions, misaligned incentives, or insufficient intelligence.
-
-They also fail because:
-- representational capacity was exhausted,
-- distinctions collapsed irreversibly,
-- future reachability was structurally foreclosed.
-
-Once this happens, no amount of cleverness can restore what the architecture no longer allows.
+- Systems allocate finite representational degrees of freedom.
+- Some allocations are costly or infeasible to reverse.
+- These allocations determine which distinctions remain reachable.
+- Computation and learning operate within, not beyond, these structural limits.
+- Adequacy is determined by downstream task requirements, not by the framework itself.
 
 ---
 
 ## Status
 
-This is a working note.
+This is a working structural note.
 
-It is intended to:
-- clarify thinking,
-- surface hidden constraints,
-- support re-derivation from first principles,
-- and remain open to correction.
-
-Claims are made only where the structure requires them.
+Its purpose is to clarify constraints, not to dictate goals.  
+Any normative interpretation must be supplied externally.
 
 ---
 
